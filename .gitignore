@@ -1,0 +1,5 @@
+build/
+project/.import
+project/export.cfg
+project/export_presets.cfg
+*nmpz.bak

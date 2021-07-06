@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/themes/custom_theme.tres" type="Theme" id=1]
+[ext_resource path="res://src/scenes/tile/tile.gd" type="Script" id=2]
+[ext_resource path="res://assets/fonts/roboto_r_20.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/backgrounds/deku.jpg" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+
+[node name="Tile" type="TextureButton"]
+margin_right = 64.0
+margin_bottom = 64.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.344086, 0.344086 )
+texture = ExtResource( 4 )
+centered = false
+hframes = 4
+vframes = 4
+
+[node name="Number" type="Control" parent="."]
+margin_right = 64.0
+margin_bottom = 64.0
+mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Number"]
+margin_right = 64.0
+margin_bottom = 64.0
+mouse_filter = 2
+color = Color( 0.05, 0.05, 0.05, 0.294118 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Number"]
+margin_right = 64.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 64.0
+margin_bottom = 64.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="." to="." method="_on_Tile_pressed"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

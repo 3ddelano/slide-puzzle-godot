@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/scenes/ui/PopupMessage.gd" type="Script" id=1]
+
+[node name="PopupMessage" type="WindowDialog"]
+margin_left = 28.0
+margin_top = 161.0
+margin_right = 308.0
+margin_bottom = 261.0
+rect_min_size = Vector2( 280, 100 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+window_title = "Error Occured"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="V" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Message" type="Label" parent="V"]
+margin_left = 10.0
+margin_right = 270.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 260, 60 )
+size_flags_horizontal = 4
+text = "The background image was changed successfully"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClosePopupButton" type="Button" parent="V"]
+margin_left = 116.0
+margin_top = 64.0
+margin_right = 163.0
+margin_bottom = 84.0
+size_flags_horizontal = 4
+text = "Close"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="V/ClosePopupButton" to="." method="_on_ClosePopupButton_pressed"]
