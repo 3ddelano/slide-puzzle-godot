@@ -3,6 +3,7 @@
 [ext_resource path="res://src/scenes/ui/PopupMessage.gd" type="Script" id=1]
 
 [node name="PopupMessage" type="WindowDialog"]
+visible = true
 margin_left = 28.0
 margin_top = 161.0
 margin_right = 308.0
