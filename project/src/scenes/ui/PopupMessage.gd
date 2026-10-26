@@ -1,9 +1,14 @@
-extends WindowDialog
+class_name PopupMessage
+extends Window
 
-func setup(title, text):
-	$V/Message.text = text
-	set_title(title)
+func _ready() -> void:
+	if not close_requested.is_connected(hide):
+		close_requested.connect(hide)
 
+func setup(message_title: String, text: String) -> void:
+	var message: Label = $V/Message
+	message.text = text
+	title = message_title
 
-func _on_ClosePopupButton_pressed():
-	visible = false
+func _on_ClosePopupButton_pressed() -> void:
+	hide()

@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=2 format=2]
+[gd_resource type="Theme" load_steps=2 format=3]
 
-[ext_resource path="res://assets/fonts/roboto_r_20.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/fonts/roboto_r_20.tres" type="FontVariation" id="1"]
 
 [resource]
-default_font = ExtResource( 1 )
+default_font = ExtResource("1")
+default_font_size = 20
